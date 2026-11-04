@@ -1,0 +1,200 @@
+## [2026-11-04T11:33:24Z] SESSION START
+
+tool=Codex Desktop
+model=gpt-6-luna
+Repo Root: /Users/jyothika/cooked.exe
+Branch: feature/feature/integration
+Worktree: /Users/jyothika/cooked.exe
+Parent Agent: none
+Language: py
+Time Remaining: not configured
+
+## [2026-11-04T11:33:24Z] Define shared Python contracts
+
+User Prompt (verbatim, secrets redacted):
+We have completed reconnaissance for all four workstreams. Your next responsibility is to establish the shared Python contracts that all team members will implement against.
+
+Read AGENTS.md, CLAUDE.md and problem_statement.md again.
+
+IMPORTANT: You are the owner of code/contracts.py. Do not implement the complete pipeline yet.
+
+Create code/contracts.py as the single source of truth for shared types.
+
+Define typed dataclasses and enums for:
+
+1. DeletionRequest
+- case_id
+- email
+- requested_at
+- reported_status
+- reported_at
+- audit_at
+- request_text
+
+2. IntentDecision
+- intent: DELETE, NOT_DELETE or AMBIGUOUS
+- rationale
+
+3. ResolvedSubject
+- resolution status: UNIQUE, AMBIGUOUS or UNRESOLVED
+- stable user_id, optional
+- current identifiers
+- historical identifiers
+- identity provenance, including audit IDs
+- resolution explanation
+
+4. EvidenceManifestEntry
+- file_id
+- file_path
+- origin
+- captured_at
+
+5. EvidenceRecord
+- evidence_id / file_id
+- relative path
+- origin
+- captured_at
+- record timestamp, optional
+- format
+- locator
+- extracted content
+- structured fields
+- parser status
+- confidence, optional
+
+6. EvidenceIndex
+- normalized evidence records
+- indexes by identifier, resource ID, system ID and searchable text
+
+7. ActivityEvent
+- activity_id
+- event_time
+- event_type
+- source_system
+- target_system
+- resource_id
+- reported_result
+- details
+
+8. ResourceObservation
+- system_id
+- resource_id
+- data_category
+- observed state
+- identifiers
+- observation timestamp
+- evidence references
+- dependency/process relationships
+
+9. DeletionRule
+- rule_id
+- data_category
+- condition
+- required_action
+
+10. AuditStep
+- step_no
+- phase
+- system_id
+- resource_id
+- operation
+- state
+- evidence_id
+
+11. AuditDecision
+- deletion_status
+- ordered steps
+
+12. OutputRow
+- case_id
+- deletion_status
+- steps_json
+
+Use enums or validation constants for the exact allowed:
+- Final statuses
+- Phases
+- Operations
+- States
+- Operation/state combinations
+
+Do not introduce any additional output statuses or operation names.
+
+INTERFACE ALIGNMENT:
+
+The intended module interfaces are:
+
+Member 1:
+- classify_deletion_request(request_text) -> IntentDecision
+- resolve_identity(request_email, requested_at, audit_at, identities, audit_log) -> ResolvedSubject
+
+Member 2:
+- load_evidence(manifest_path, dataset_root) -> EvidenceIndex
+- search_subject(resolved_subject, audit_at, evidence_index, activity) -> list[ResourceObservation]
+
+Member 3:
+- evaluate(observations, rules) -> AuditDecision
+
+Member 4:
+- build_rows(...)
+- write_output(rows, path)
+- validate_output(path, requests)
+
+Resolve type mismatches between the above interfaces and your proposed architecture. The shared contract must preserve all necessary provenance and timestamps.
+
+DESIGN RULES:
+- Use standard-library Python types where possible.
+- Avoid circular imports.
+- Do not make contracts depend on implementation modules.
+- Make optional and unknown values explicit.
+- Preserve identifiers as strings.
+- Ensure proposed remediation steps can have evidence_id="".
+- Ensure evidence-backed findings and completed verifications carry valid evidence references.
+- Keep the output schema exact.
+
+TESTING:
+Create tests for dataclass construction, enum validation, allowed operation/state pairs, invalid statuses, optional fields and JSON serialization.
+
+Do not modify other members' files or dataset files.
+Do not implement case-specific logic.
+Do not hardcode sample answers.
+
+After implementation:
+1. Show the complete contracts.py public interface.
+2. Run the tests.
+3. Explain how Members 1, 2 and 3 should import and use these contracts.
+4. Commit only your own changes on feature/integration after review.
+5. Do not merge or overwrite other members' work.
+
+Agent Response Summary:
+Re-read AGENTS.md, CLAUDE.md and problem_statement.md and confirmed the integration branch is clean before starting. Added the required append-only session and turn log. Next I will implement the shared contracts and focused tests, then review and commit only those owned files plus the required log.
+
+Actions:
+* Read repository instructions and current branch/status.
+* Appended session start and this turn to log.txt.
+* Requested write access to the cloned repository for the authorized files.
+
+Context:
+tool=Codex Desktop
+model=gpt-6-luna
+branch=feature/feature/integration
+repo_root=/Users/jyothika/cooked.exe
+worktree=/Users/jyothika/cooked.exe
+parent_agent=none
+
+## [2026-11-04T11:40:48Z] Contract implementation completion
+
+Agent Response Summary:
+Implemented the shared dataclasses, identity input records, string enums, operation/state table, status-dependent evidence rules, deterministic serialization, and reference validation. Added eight focused unit tests; all pass. Reviewed the staged changes and created the explicitly requested `feature/integration` branch from the pre-existing `feature/feature/integration` HEAD because the requested branch did not previously exist.
+
+Actions:
+* Added `code/contracts.py`, `code/__init__.py`, and `code/test_contracts.py`.
+* Ran `python3 -m unittest code.test_contracts -v` (8 tests passed), `python3 -m compileall -q code/contracts.py code/test_contracts.py code/__init__.py`, and `git diff --check`.
+* Staged only the three owned code files and `log.txt`.
+
+Context:
+tool=Codex Desktop
+model=gpt-6-luna
+branch=feature/integration
+repo_root=/Users/jyothika/cooked.exe
+worktree=/Users/jyothika/cooked.exe
+parent_agent=none
