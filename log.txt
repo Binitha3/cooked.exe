@@ -198,3 +198,43 @@ branch=feature/integration
 repo_root=/Users/jyothika/cooked.exe
 worktree=/Users/jyothika/cooked.exe
 parent_agent=none
+
+## [2026-11-04T12:10:48Z] Coordinate integration and shared main
+
+User Prompt (verbatim, secrets redacted):
+You own integration coordination.
+
+Your contracts.py implementation is committed. Now:
+
+1. Verify the actual branch and commit history. Resolve the unusual feature/integration versus feature/feature/integration branch naming.
+2. Ensure the contracts commit is available on the team's shared main branch after review.
+3. Send all members the exact contracts.py interface and import conventions.
+4. Do not rewrite their modules.
+5. Create a small integration test that imports contracts.py and checks the expected interfaces of identity_resolution.py, evidence_processing.py and policy_engine.py as they become available.
+6. Define the expected end-to-end pipeline:
+   request authorization -> identity resolution -> evidence discovery -> policy evaluation -> output serialization.
+7. Ensure NOT_APPLICABLE returns an empty steps array.
+8. Keep main.py and output.py under your ownership.
+9. Ensure the final output validator checks all 518 rows, exact schema, valid JSON, evidence references, statuses, ordering and step numbering.
+
+Do not create fake evidence or hardcoded predictions to make integration tests pass.
+
+Wait for reviewed feature branches before merging their implementations. Report integration failures explicitly.
+
+Agent Response Summary:
+Verified that local `feature/integration` contains the contracts commit and is one commit ahead of `main` and `origin/main`; the stale `feature/feature/integration` branch remains at the shared base. Added an owned output validator and conditional interface smoke tests without touching feature-member modules or fabricating predictions. The validator checks the 518-row count, exact CSV columns, request coverage, status/JSON/step constraints, evidence ID membership, and evidence timestamps against each request cutoff; the current blank template is correctly rejected.
+
+Actions:
+* Fetched `origin/main` and inspected local and remote branch heads.
+* Inspected available Codex threads and active collaboration agents; no relevant member threads or active member agents were present.
+* Added `code/output.py` and `code/test_integration_interfaces.py`; strengthened the NOT_APPLICABLE serialization test.
+* Ran the contract and integration tests: 9 passed, 3 skipped because the identity, evidence, and policy modules are not yet present.
+* Ran compilation and whitespace checks; validated the blank template against all 518 real requests and confirmed it fails as expected.
+
+Context:
+tool=Codex Desktop
+model=gpt-6-luna
+branch=feature/integration
+repo_root=/Users/jyothika/cooked.exe
+worktree=/Users/jyothika/cooked.exe
+parent_agent=none

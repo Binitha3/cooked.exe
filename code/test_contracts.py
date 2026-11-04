@@ -120,7 +120,8 @@ class ContractsTests(unittest.TestCase):
         self.assertEqual(set(parsed[0]), {"step_no", "phase", "system_id", "resource_id", "operation", "state", "evidence_id"})
         row = OutputRow.from_decision("case_1", AuditDecision("COMPLETE", steps))
         self.assertEqual(row.to_dict()["deletion_status"], "COMPLETE")
-        OutputRow("case_2", "NOT_APPLICABLE", "[]")
+        not_applicable = OutputRow.from_decision("unit-case", AuditDecision("NOT_APPLICABLE", ()))
+        self.assertEqual(not_applicable.steps_json, "[]")
         with self.assertRaises(ValueError):
             OutputRow("case_3", "NOT_APPLICABLE", "{}")
         with self.assertRaises(ValueError):
