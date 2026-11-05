@@ -1,6 +1,6 @@
 {
   "schema_version": "deadbyte-fallback-case-classification.v1",
-  "source": "code/evaluation/unresolved_case_audit.json",
+  "source": "evaluation/unresolved_case_audit.json",
   "source_replay": {
     "request_count": 518,
     "valid_row_count": 381,

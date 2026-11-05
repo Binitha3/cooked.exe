@@ -110,7 +110,7 @@ its endpoint node IDs, evidence/provenance fields, timestamps, and cutoff.
 Run from the repository root:
 
 ```text
-python -B -m unittest code.test_ghost_data_map_integration -v
+python -B -m unittest tests.test_ghost_data_map_integration -v
 ```
 
 The test loads `dataset/evidence_files.csv` and `dataset/system_activity.csv`,

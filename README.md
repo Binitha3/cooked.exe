@@ -17,8 +17,8 @@ Read [`problem_statement.md`](./problem_statement.md) for the complete challenge
 Clone the repository and move into the project directory:
 
 ```bash
-git clone https://github.com/interviewstreet/hackerrank-orchestrate-october26.git
-cd hackerrank-orchestrate-october26
+git clone https://github.com/Binitha3/cooked.exe.git
+cd cooked.exe
 ```
 
 Start your AI coding tool from the **repository root** so it automatically reads [`AGENTS.md`](./AGENTS.md) and logs your session turns to `log.txt` in the root directory.
@@ -31,7 +31,7 @@ Your solution must:
 - Generate one prediction row for every request in `dataset/deletion_requests.csv`
 - Write the final predictions to `output.csv` in the repository root
 
-Run the starter Python entry point with:
+Run the Python entry point with:
 
 ```bash
 python3 code/main.py
@@ -47,10 +47,28 @@ python3 -m code.web_app --port 8000
 
 Then open `http://127.0.0.1:8000/`. The interface runs identity, evidence, and policy checks for the selected case in memory. Ghost Data Map, risk explanations, the evidence timeline, and Rebirth results use the selected case's pipeline data. What-If actions are read-only previews; the app does not execute remediation or write `output.csv`.
 
+Run the test suite from the repository root with:
+
+```bash
+./scripts/run_tests.sh
+```
+
+The test modules live in `tests/`; production modules remain in `code/`.
+
+## Repository layout
+
+- `code/` — application, policy, evidence, and frontend implementation.
+- `dataset/` — challenge-provided participant data.
+- `docs/` — architecture and feature integration notes.
+- `evaluation/` — evaluation reports and machine-readable blocker diagnostics.
+- `results/` — clearly labelled generated diagnostics; never the official output.
+- `scripts/` — test, evaluation, demo, and packaging commands.
+- `tests/` — unit and integration tests.
+
 ## Hosted demo (Render)
 
 The root [`render.yaml`](./render.yaml) defines a Render web service for the
-`feature/integration` branch. To create the public demo, sign in to Render,
+`main` branch. To create the public demo, sign in to Render,
 connect the `Binitha3/cooked.exe` GitHub repository, and create a Blueprint from
 this repository. The service binds to Render's assigned port, exposes
 `/api/health` for health checks, and sets `DEADBYTE_DEMO_MODE=true` so its case
@@ -97,6 +115,8 @@ Produce exactly one row per request. `deletion_status` is `COMPLETE`, `INCOMPLET
 
 The final file must contain 518 data rows sorted by `case_id` (plus the header row). The grader parses `steps_json` as JSON, so object-key order and whitespace do not matter; array order does. Order findings, remediation, and verification in that phase order. Within a phase, follow the operation order in the problem statement, then sort by `system_id` and `resource_id`.
 
+**Current status:** no valid root `output.csv` is available. There are 381 validated candidate rows and 137 unresolved requests. The file in `results/partial_validated_rows_not_for_submission.csv` is diagnostic only and must not be submitted as `output.csv`.
+
 ---
 
 ## Evaluation
@@ -112,14 +132,14 @@ The final file must contain 518 data rows sorted by `case_id` (plus the header r
 Your `code.zip` must include:
 
 ```text
-code/evaluation/evaluation_report.md
-code/evaluation/usage_report.md
+evaluation/evaluation_report.md
+evaluation/usage_report.md
 ```
 
 - `evaluation_report.md` must cover case, row, field, and sequence accuracy, at least three additional evaluation cases created by you, failures found, and improvements made.
 - `usage_report.md` must cover the final full-dataset run, including model providers and names, model calls, input and output tokens, total and average tokens per request, and estimated total and per-request cost. Include per-model and overall totals when using multiple models.
 
-**Important:** Place `evaluation_report.md` and `usage_report.md` inside `code/evaluation/` (matching `code/evaluation/main.py` in this starter layout), write your complete evaluation metrics, custom evaluation test cases, and token/cost breakdowns directly inside those Markdown files, and keep prompts in source code or Markdown files. Automated code evaluation ignores raw data files (`.csv`, `.tsv`, `.json`, `.jsonl`, `.sql`, `.log`), so content stored only in those formats will not be visible to the code judge or AI interviewer.
+Place `evaluation_report.md` and `usage_report.md` in the root `evaluation/` directory. Write the evaluation metrics, custom test cases, and usage details in those Markdown files. Automated code evaluation ignores raw data files (`.csv`, `.tsv`, `.json`, `.jsonl`, `.sql`, `.log`), so report findings in Markdown as well as maintaining machine-readable diagnostics.
 
 ---
 
@@ -149,24 +169,16 @@ This repository includes [`AGENTS.md`](./AGENTS.md), which instructs compatible 
 
 You may use any programming language, model, framework, or retrieval approach. Include clear setup and execution instructions in `README.md` inside `code.zip`.
 
-To package `code.zip` from the repository root without bundling the dataset:
-
-**macOS / Linux:**
+Build `code.zip` from the repository root without bundling the dataset:
 
 ```bash
-zip -r code.zip README.md code -x "*/__pycache__/*" "*/.venv/*" "*/venv/*" "*/node_modules/*" "*/.git/*" "*/.DS_Store"
-```
-
-**Windows (PowerShell):**
-
-```powershell
-Compress-Archive -Path README.md, code -DestinationPath code.zip -Force
+python3 scripts/package_submission.py
 ```
 
 When packaging `code.zip`:
 
-- Keep your evaluation reports in `code/evaluation/` so they are bundled automatically with `code` (or add `evaluation` to the archive command above if you placed them in a top-level `evaluation/` directory).
-- Do **not** include `dataset/`, virtual environments (`.venv`, `venv`, `node_modules`), or build caches (`__pycache__`). On Windows, keep `.venv` at the repository root (outside `code/`) and remove any `code/__pycache__` folders before running `Compress-Archive`.
+- The packaging script includes `code/`, `docs/`, `evaluation/`, `scripts/`, and `tests/` with the root README and Render configuration.
+- Do **not** include `dataset/`, `results/`, virtual environments (`.venv`, `venv`, `node_modules`), credentials, or build caches (`__pycache__`).
 - Do **not** include nested archives (`.zip`, `.tar`, `.gz`, `.tgz`, `.7z`, `.rar`) inside `code.zip` — submissions containing nested archive files will be rejected.
 
 Before submitting, confirm that:
@@ -175,6 +187,6 @@ Before submitting, confirm that:
 - every `steps_json` value is a valid JSON array with consecutive step numbers starting at `1`;
 - findings cite valid evidence IDs, and `COMPLETE` verification steps cite evidence proving the current state;
 - proposed remediation and future verification steps use an empty `evidence_id` (`""`);
-- `code.zip` includes your runnable code, `README.md`, `code/evaluation/evaluation_report.md`, and `code/evaluation/usage_report.md`;
+- `code.zip` includes your runnable code, `README.md`, `evaluation/evaluation_report.md`, and `evaluation/usage_report.md`;
 - `log.txt` follows the `AGENTS.md` turn format and is uploaded to the `chat_transcript` slot; and
 - no API keys, credentials, real personal data, or sensitive configuration values are included.

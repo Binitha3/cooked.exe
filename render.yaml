@@ -4,7 +4,8 @@ services:
     runtime: python
     plan: free
     region: singapore
-    branch: feature/integration
+    rootDir: .
+    branch: main
     autoDeployTrigger: commit
     buildCommand: python --version
     startCommand: python -m code.web_app --host 0.0.0.0 --port $PORT

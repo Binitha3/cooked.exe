@@ -1,6 +1,6 @@
 {
   "schema_version": "deadbyte-partial-replay.v1",
-  "artifact": "partial_validated_rows_not_for_submission.csv",
+  "artifact": "results/partial_validated_rows_not_for_submission.csv",
   "artifact_sha256": "f62d41109d96a002a5269fe1e51448427bba805cafd67532e1dce9b7554af62e",
   "artifact_notice": "PARTIAL DIAGNOSTIC ONLY \u2014 NOT THE OFFICIAL output.csv AND NOT VALID FOR SUBMISSION.",
   "official_output_generated": false,

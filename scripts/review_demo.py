@@ -1,7 +1,7 @@
 """Run a single evidence-backed review demo without writing output.csv.
 
 From the repository root:
-    python3 -m code.evaluation.review_demo
+    python3 -m scripts.review_demo
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ from code.main import (
 from code.output import _load_evidence_reference_catalog, validate_evidence_references
 
 
-REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 DATASET_ROOT = REPOSITORY_ROOT / "dataset"
 DEMO_CASE_ID = "case_16"
 

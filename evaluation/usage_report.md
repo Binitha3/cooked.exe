@@ -2,7 +2,7 @@
 
 ## Run status
 
-The final full replay processed all **518** requests independently. It produced **381** per-row validated candidate outputs and recorded **137** unresolved cases; see `replay_diagnostics.json` and `unresolved_case_audit.json`. The 381 rows are preserved separately as `partial_validated_rows_not_for_submission.csv`, with `partial_replay_manifest.json`. This is a diagnostic artifact only. No root `output.csv` was generated because the unresolved cases prevent a valid complete submission.
+The final full replay processed all **518** requests independently. It produced **381** per-row validated candidate outputs and recorded **137** unresolved cases; see `replay_diagnostics.json` and `unresolved_case_audit.json`. The 381 rows are preserved separately as `results/partial_validated_rows_not_for_submission.csv`, with `evaluation/partial_replay_manifest.json`. This is a diagnostic artifact only. No root `output.csv` was generated because the unresolved cases prevent a valid complete submission.
 
 The pipeline used local deterministic code and participant-visible dataset evidence. No model provider was called during the replay.
 
