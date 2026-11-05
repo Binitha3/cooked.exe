@@ -8,6 +8,7 @@ in memory. It never writes or updates output.csv.
 from __future__ import annotations
 
 import json
+import os
 import re
 from dataclasses import dataclass, field
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -67,17 +68,21 @@ class AuditContext:
     activity: list[Any]
     rules: list[Any]
     modules: Any
+    demo_mode: bool = False
     evidence_index: Any = None
     analysis_state_by_case: dict[str, dict[str, Any]] = field(default_factory=dict)
 
 
 def load_context(repository_root: Path = REPOSITORY_ROOT) -> AuditContext:
     dataset_root = repository_root / "dataset"
-    evaluation_requests = read_requests(dataset_root)
+    demo_mode = os.environ.get("DEADBYTE_DEMO_MODE", "").strip().casefold() in {
+        "1", "true", "yes", "on"
+    }
     sample_requests = read_requests_file(
         dataset_root / "sample_deletion_requests.csv",
         expected_count=32,
     )
+    evaluation_requests = [] if demo_mode else read_requests(dataset_root)
     all_requests = [*sample_requests, *evaluation_requests]
     return AuditContext(
         repository_root=repository_root,
@@ -92,6 +97,7 @@ def load_context(repository_root: Path = REPOSITORY_ROOT) -> AuditContext:
         activity=read_activity(dataset_root),
         rules=read_deletion_rules(dataset_root),
         modules=load_feature_modules(),
+        demo_mode=demo_mode,
     )
 
 
@@ -455,6 +461,9 @@ class AuditRequestHandler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:  # noqa: N802 - stdlib handler API
         path = urlparse(self.path).path
+        if path == "/api/health":
+            self._send_json({"status": "ok"})
+            return
         if path == "/api/cases":
             self._send_json({"cases": case_catalog(self.context)})
             return

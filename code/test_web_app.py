@@ -2,9 +2,13 @@
 
 from __future__ import annotations
 
+import csv
 import json
 import threading
 import unittest
+from pathlib import Path
+from unittest.mock import patch
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 from code.web_app import AuditHTTPServer, analyze_case, load_context
@@ -25,6 +29,49 @@ class DeadbyteWebAppTests(unittest.TestCase):
         self.assertIn("audit_at", catalog[0])
         sample = next(item for item in catalog if item["case_id"] == "case_16")
         self.assertEqual(sample["dataset_group"], "PUBLIC SAMPLE")
+
+    def test_demo_mode_exposes_only_public_sample_requests(self) -> None:
+        from code.web_app import case_catalog
+
+        with patch.dict("os.environ", {"DEADBYTE_DEMO_MODE": "true"}):
+            demo_context = load_context()
+
+        catalog = case_catalog(demo_context)
+        self.assertTrue(demo_context.demo_mode)
+        self.assertEqual(len(catalog), 32)
+        self.assertEqual({item["dataset_group"] for item in catalog}, {"PUBLIC SAMPLE"})
+
+        with (demo_context.dataset_root / "deletion_requests.csv").open(
+            encoding="utf-8", newline=""
+        ) as source:
+            evaluation_ids = {row["case_id"] for row in csv.DictReader(source)}
+        hidden_evaluation_id = next(
+            case_id for case_id in evaluation_ids if case_id not in demo_context.requests
+        )
+        server = AuditHTTPServer(("127.0.0.1", 0), demo_context)
+        thread = threading.Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        base_url = f"http://127.0.0.1:{server.server_port}"
+        try:
+            with urlopen(f"{base_url}/api/cases") as response:
+                api_catalog = json.loads(response.read())["cases"]
+            self.assertEqual(len(api_catalog), 32)
+            self.assertTrue(all(item["dataset_group"] == "PUBLIC SAMPLE" for item in api_catalog))
+
+            hidden_request = Request(
+                f"{base_url}/api/verify",
+                data=json.dumps({"case_id": hidden_evaluation_id}).encode("utf-8"),
+                headers={"Content-Type": "application/json"},
+                method="POST",
+            )
+            with self.assertRaises(HTTPError) as raised:
+                urlopen(hidden_request)
+            self.assertEqual(raised.exception.code, 404)
+            raised.exception.close()
+        finally:
+            server.shutdown()
+            server.server_close()
+            thread.join(timeout=2)
 
     def test_frontend_has_visible_navigation_to_integrated_features(self) -> None:
         from pathlib import Path
@@ -103,6 +150,10 @@ class DeadbyteWebAppTests(unittest.TestCase):
         thread.start()
         base_url = f"http://127.0.0.1:{server.server_port}"
         try:
+            with urlopen(f"{base_url}/api/health") as response:
+                health = json.loads(response.read())
+            self.assertEqual(health, {"status": "ok"})
+
             with urlopen(f"{base_url}/api/cases") as response:
                 cases = json.loads(response.read())
             self.assertEqual(len(cases["cases"]), 550)

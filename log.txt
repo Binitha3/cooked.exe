@@ -2817,3 +2817,132 @@ repo_root=/Users/jyothika/cooked.exe
 worktree=/Users/jyothika/cooked.exe
 parent_agent=none
 
+
+## 2026-11-05T04:51:42Z SESSION START
+
+tool=Codex desktop
+model=GPT-6
+Repo Root: /Users/jyothika/cooked.exe
+Branch: feature/integration
+Worktree: /Users/jyothika/cooked.exe
+Parent Agent: none
+Language: py
+Time Remaining: not configured
+
+## 2026-11-05T04:55:51Z Deployment preparation and verification
+
+User Prompt (verbatim, secrets redacted):
+# DEADBYTE — DEPLOYMENT EXECUTION
+
+You are Member 4, the release and deployment owner.
+
+GitHub integration is complete.
+
+**Repository:** https://github.com/Binitha3/cooked.exe  
+**Branch:** `feature/integration`  
+**Current HEAD:** `c001777186540aec89c7467ae523586e85b291ea`
+
+Your task is to deploy the existing integrated application and produce a working public URL for the hackathon judges.
+
+## 1. Preserve the current project
+
+- Read `AGENTS.md` and `agent_trace_instructions.md`.
+- Work from the verified integration branch.
+- Preserve the existing GitHub commits and member branches.
+- Do not force-push, rewrite history, or discard existing changes.
+- Keep the local demo operational at `http://127.0.0.1:8000/`.
+- Do not change the 381-row diagnostic CSV into an official submission.
+
+## 2. Identify the right hosting platform
+
+Inspect the actual application architecture, dependencies, entry point, static assets, backend, dataset access and environment variables.
+
+Select a compatible hosting platform that:
+- Supports the application's actual backend and frontend.
+- Offers a free or affordable hackathon deployment option.
+- Supports the required runtime and persistent process.
+- Can serve the demo cases and evidence safely.
+
+Evaluate suitable platforms rather than assuming Vercel or any other provider will work.
+
+Explain the choice briefly before deployment.
+
+## 3. Configure and deploy
+
+- Create the minimum required deployment configuration.
+- Configure environment variables securely.
+- Never commit API keys, credentials or `.env` files.
+- Ensure backend and frontend communicate correctly.
+- Ensure demo data is available in production without exposing real personal information.
+- Preserve the current UI, animations and functionality.
+- Do not weaken evidence or policy safeguards.
+
+If account authentication, permissions, billing or user approval is required, tell me exactly what I need to do. Do not pretend deployment succeeded.
+
+## 4. Test the public application
+
+After deployment, verify:
+
+1. Public URL loads.
+2. Backend health endpoint responds.
+3. Case catalog loads.
+4. Case 15 investigation works.
+5. Case 16 investigation works.
+6. Ghost Data Map displays 7 nodes and 5 evidenced edges for case 16.
+7. Risk cards and evidence provenance load.
+8. Explainability works.
+9. What-If remains preview-only.
+10. Rebirth correctly displays INDETERMINATE when evidence coverage is missing.
+
+Check frontend-to-backend connectivity and report any failures.
+
+If browser-based visual testing is unavailable, state that limitation and perform HTTP/API checks.
+
+## 5. GitHub and release hygiene
+
+- Push deployment configuration and necessary fixes to `feature/integration` only after reviewing the diff.
+- Use genuine commits and accurate messages.
+- Do not include credentials or generated secrets.
+- Verify the remote branch after pushing.
+
+The existing `agent-trace.zip` contains completed-session traces. Add this active session's trace only after it closes, then revalidate the archive.
+
+## 6. Final report
+
+Return:
+
+- Hosting platform and reason.
+- Deployment configuration created.
+- Public URL, only if genuinely deployed.
+- Backend health result.
+- Frontend and feature verification results.
+- Remaining bugs or limitations.
+- GitHub commits and branch.
+- Confirmation that no partial CSV was submitted as official output.
+- Deployment status and remaining blockers.
+
+Do not claim deployment success without testing the public URL.
+
+**Priority: A stable public demo that judges can access. Do not sacrifice the working local demo to force deployment.**
+
+PLEASE DO IT VERY QUICKLYYYY
+
+Agent Response Summary:
+Reviewed the app, challenge instructions, repository branch, and official Render documentation. Added a Render Free Blueprint plus a hosted demo mode that lists only the 32 public sample cases and provides `/api/health`; rebuilt `code.zip`. The web integration tests passed 8/8; actual cloud deployment remains blocked because browser access is disabled and no Render CLI or deployment credentials are configured, so no public URL is claimed.
+
+Actions:
+* Read `AGENTS.md`, `agent_trace_instructions.md`, app code, tests, and README.
+* Fetched `origin/feature/integration` and confirmed it still matches the starting commit.
+* Added `render.yaml`, hosted sample-only mode, `/api/health`, focused tests, and hosted-demo README instructions.
+* Ran `python3 -m unittest code.test_web_app -v` (8 tests passed).
+* Verified local port 8000 serves the app and case catalog; it is an older running process and does not yet expose the new health route.
+* Rebuilt `code.zip` with current README, `render.yaml`, code, and evaluation reports; excluded dataset, caches, secrets, and nested archives.
+* Checked browser availability; local browser use is disabled. No Render CLI or deployment credential name was present.
+
+Context:
+tool=Codex desktop
+model=GPT-6
+branch=feature/integration
+repo_root=/Users/jyothika/cooked.exe
+worktree=/Users/jyothika/cooked.exe
+parent_agent=none

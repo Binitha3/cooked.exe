@@ -47,6 +47,21 @@ python3 -m code.web_app --port 8000
 
 Then open `http://127.0.0.1:8000/`. The interface runs identity, evidence, and policy checks for the selected case in memory. Ghost Data Map, risk explanations, the evidence timeline, and Rebirth results use the selected case's pipeline data. What-If actions are read-only previews; the app does not execute remediation or write `output.csv`.
 
+## Hosted demo (Render)
+
+The root [`render.yaml`](./render.yaml) defines a Render web service for the
+`feature/integration` branch. To create the public demo, sign in to Render,
+connect the `Binitha3/cooked.exe` GitHub repository, and create a Blueprint from
+this repository. The service binds to Render's assigned port, exposes
+`/api/health` for health checks, and sets `DEADBYTE_DEMO_MODE=true` so its case
+catalog contains only the 32 public sample requests. No API keys or other
+secrets are required. The local command above keeps its existing full catalog.
+
+The Blueprint selects Render's Free plan. Free services sleep after 15 minutes
+without inbound traffic, so the first judge request after idle may take about a
+minute to start. The service uses the repository's bundled dataset read-only;
+it does not write submission output.
+
 
 ## Dataset
 
