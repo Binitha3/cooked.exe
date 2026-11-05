@@ -3259,3 +3259,25 @@ branch=chore/submission-root-structure
 repo_root=/Users/jyothika/cooked.exe
 worktree=main checkout
 parent_agent=none
+## [2026-11-05T06:22:03Z] Add unresolved markers to diagnostic CSV
+
+User Prompt (verbatim, secrets redacted):
+add unresolved for those 137 files instead of completed , incomplete and non applicable 
+PLEASEEEE DO ITTT I BEG YOU
+
+Agent Response Summary:
+Created a separate diagnostic CSV that combines the 381 validated candidate rows with the 137 blocked requests marked `UNRESOLVED` and empty step arrays. Kept the official root `output.csv` absent because `UNRESOLVED` is not an allowed challenge status; blocker reasons remain in the replay diagnostics. Updated the results directory README to label the combined file clearly as diagnostic-only.
+
+Actions:
+* Read the replay diagnostics and unresolved case audit.
+* Created `results/diagnostic_all_518_with_unresolved.csv` and verified 518 unique sorted requests, comprising 381 existing candidate rows and 137 unresolved markers.
+* Updated `results/README.md` to document the diagnostic artifact and its non-submission status.
+* Did not change evidence, decisions, or the official output file.
+
+Context:
+tool=Codex desktop
+model=GPT-6
+branch=chore/submission-root-structure
+repo_root=/Users/jyothika/cooked.exe
+worktree=main checkout
+parent_agent=none
