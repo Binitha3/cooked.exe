@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: deadbyte-demo
+    runtime: python
+    plan: free
+    region: singapore
+    branch: feature/integration
+    autoDeployTrigger: commit
+    buildCommand: python --version
+    startCommand: python -m code.web_app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: DEADBYTE_DEMO_MODE
+        value: "true"
+      - key: PYTHONUNBUFFERED
+        value: "1"

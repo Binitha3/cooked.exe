@@ -1,0 +1,27 @@
+{
+  "schema_version": "deadbyte-partial-replay.v1",
+  "artifact": "partial_validated_rows_not_for_submission.csv",
+  "artifact_sha256": "f62d41109d96a002a5269fe1e51448427bba805cafd67532e1dce9b7554af62e",
+  "artifact_notice": "PARTIAL DIAGNOSTIC ONLY \u2014 NOT THE OFFICIAL output.csv AND NOT VALID FOR SUBMISSION.",
+  "official_output_generated": false,
+  "request_count": 518,
+  "valid_row_count": 381,
+  "unresolved_count": 137,
+  "unresolved_diagnostic": "replay_diagnostics.json",
+  "validation": {
+    "header": [
+      "case_id",
+      "deletion_status",
+      "steps_json"
+    ],
+    "rows_sorted": true,
+    "unique_case_ids": true,
+    "every_row_reconstructed_with_OutputRow": true,
+    "per_row_evidence_reference_and_cutoff_check": true,
+    "matched_existing_blocker_diagnostics": true
+  },
+  "source_diagnostics_sha256": {
+    "replay_diagnostics.json": "0eda6a811ad6aacd72d6aa593a9e02c59b2be867778117ba33bd135d183008c4",
+    "unresolved_case_audit.json": "5c5fef84964cebdb6473a58d754dff191c6b0c7237dbf0be2728e1b72077cb96"
+  }
+}

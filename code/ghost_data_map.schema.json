@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ghost_data_map.schema.json",
+  "title": "DEADBYTE Ghost Data Map v1",
+  "type": "object",
+  "required": ["schema_version", "audit_at", "nodes", "edges", "warnings"],
+  "properties": {
+    "schema_version": { "const": "ghost-data-map.v1" },
+    "audit_at": { "type": "string", "format": "date-time" },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "title": "System node",
+            "type": "object",
+            "required": ["node_id", "node_type", "system_id", "resource_id", "resource_type", "observed_state", "visual_state", "risk_classification", "evidence_ids"],
+            "properties": {
+              "node_id": { "type": "string" },
+              "node_type": { "const": "SYSTEM" },
+              "system_id": { "type": "string" },
+              "resource_id": { "type": "null" },
+              "resource_type": { "const": "SYSTEM" },
+              "observed_state": { "const": "UNKNOWN" },
+              "visual_state": { "const": "SYSTEM" },
+              "risk_classification": { "type": "null" },
+              "evidence_ids": { "$ref": "#/$defs/stringArray" }
+            },
+            "additionalProperties": true
+          },
+          {
+            "title": "Resource node",
+            "type": "object",
+            "required": ["node_id", "node_type", "system_id", "resource_id", "resource_type", "observed_state", "visual_state", "risk_classification", "evidence_ids", "provenance"],
+            "properties": {
+              "node_id": { "type": "string" },
+              "node_type": { "const": "RESOURCE" },
+              "system_id": { "type": "string" },
+              "resource_id": { "type": "string" },
+              "resource_type": { "type": "string" },
+              "observed_state": { "type": "string", "enum": ["UNKNOWN", "PRESENT", "ACTIVE", "DISABLED", "BLOCKED", "ABSENT", "REDACTED", "ANONYMIZED", "CONFLICTING"] },
+              "visual_state": { "type": "string" },
+              "risk_classification": { "type": ["string", "null"] },
+              "evidence_ids": { "$ref": "#/$defs/stringArray" },
+              "provenance": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["evidence_id", "captured_at", "record_timestamps", "source_locators", "trace_ids"],
+                  "properties": {
+                    "evidence_id": { "type": "string" },
+                    "captured_at": { "type": ["string", "null"], "format": "date-time" },
+                    "record_timestamps": { "$ref": "#/$defs/stringArray" },
+                    "source_locators": { "$ref": "#/$defs/stringArray" },
+                    "trace_ids": { "$ref": "#/$defs/stringArray" }
+                  },
+                  "additionalProperties": true
+                }
+              }
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["edge_id", "source_node_id", "destination_node_id", "edge_type", "relationship_type", "active_state", "support_status", "evidence_ids", "trace_ids", "source_locators", "timestamp", "captured_at", "record_timestamps", "audit_at", "cutoff_status"],
+        "properties": {
+          "edge_id": { "type": "string" },
+          "source_node_id": { "type": "string" },
+          "destination_node_id": { "type": "string" },
+          "edge_type": { "type": "string", "enum": ["OBSERVED_IN", "REPORTED_ACTIVITY_CLAIM", "ACTIVE_DATA_FLOW", "INACTIVE_DATA_FLOW", "BACKUP_RESTORE_DEPENDENCY", "SNAPSHOT_DEPENDENCY", "RESOURCE_DEPENDENCY"] },
+          "relationship_type": { "type": "string" },
+          "active_state": { "type": ["string", "null"], "enum": ["ACTIVE", "INACTIVE", null] },
+          "support_status": { "type": "string", "enum": ["EVIDENCE_BACKED", "REPORTED_ACTIVITY"] },
+          "evidence_ids": { "$ref": "#/$defs/stringArray" },
+          "trace_ids": { "$ref": "#/$defs/stringArray" },
+          "source_locators": { "$ref": "#/$defs/stringArray" },
+          "timestamp": { "type": ["string", "null"], "format": "date-time" },
+          "captured_at": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["evidence_id", "captured_at"],
+              "properties": {
+                "evidence_id": { "type": "string" },
+                "captured_at": { "type": "string", "format": "date-time" }
+              },
+              "additionalProperties": true
+            }
+          },
+          "record_timestamps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["evidence_id", "timestamp"],
+              "properties": {
+                "evidence_id": { "type": "string" },
+                "timestamp": { "type": "string", "format": "date-time" }
+              },
+              "additionalProperties": true
+            }
+          },
+          "audit_at": { "type": "string", "format": "date-time" },
+          "cutoff_status": { "const": "INCLUDED_AT_OR_BEFORE_AUDIT_AT" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "resource_id"],
+        "properties": {
+          "code": { "type": "string" },
+          "resource_id": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "$defs": {
+    "stringArray": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

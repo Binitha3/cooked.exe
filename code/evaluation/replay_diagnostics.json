@@ -1,0 +1,831 @@
+{
+  "schema_version": "deadbyte-replay-diagnostics.v1",
+  "request_count": 518,
+  "valid_row_count": 381,
+  "unresolved_count": 137,
+  "output_status": "not_generated_unresolved_cases",
+  "unresolved_cases": [
+    {
+      "case_id": "case_33",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_33: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_34",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_34: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_3753; Missing policy fact 'shared_context' for support_platform/support_9538",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_35",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_35: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_36",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_36: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Unknown resource state for applicable policy: account_5823; Unknown resource state for applicable policy: export_7689; Unknown resource state for applicable policy: search_5575; Missing policy fact 'within_retention_period' for security_service/audit_record_2966",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_37",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_37: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Unknown resource state for applicable policy: account_5193; Unknown resource state for applicable policy: search_1934; Missing policy fact 'within_retention_period' for security_service/audit_record_2019",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_38",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_38: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Unknown resource state for applicable policy: account_2381; Missing policy fact 'within_retention_period' for security_service/audit_record_633",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_39",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_39: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_40",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_40: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Unknown resource state for applicable policy: account_1810; Unknown resource state for applicable policy: search_3200; Missing policy fact 'within_retention_period' for security_service/audit_record_8349; Missing policy fact 'shared_context' for support_platform/support_4887",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_41",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_41: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Unknown resource state for applicable policy: account_4051; Missing policy fact 'restore_blockable' for backup_service/backup_706; Missing policy fact 'within_retention_period' for security_service/audit_record_7814; Missing policy fact 'shared_context' for support_platform/support_2667",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_42",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_42: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Unknown resource state for applicable policy: account_4337; Unknown resource state for applicable policy: search_7078; Missing policy fact 'within_retention_period' for security_service/audit_record_6760; Missing policy fact 'shared_context' for support_platform/support_7769",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_44",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_44: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_1066",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_50",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_50: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_51",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_51: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_1097",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_52",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_52: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_53",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_53: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_55",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_55: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_56",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_56: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_4078",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_57",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_57: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_7219; Missing policy fact 'shared_context' for support_platform/support_7479",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_58",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_58: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_8465",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_59",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_59: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_962",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_60",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_60: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_629",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_61",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_61: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_63",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_63: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_64",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_64: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_3933",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_66",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_66: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_4249",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_74",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_74: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_75",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_75: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_8673",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_76",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_76: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_9746",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_77",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_77: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_008",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_81",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_81: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_5953",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_82",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_82: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_9166",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_83",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_83: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for search_index_service/audit_record_2636; Missing policy fact 'within_retention_period' for security_service/audit_record_2636",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_84",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_84: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for search_index_service/audit_record_3787; Missing policy fact 'within_retention_period' for security_service/audit_record_3787",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_86",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_86: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for search_index_service/audit_record_5580; Missing policy fact 'within_retention_period' for security_service/audit_record_5580",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_87",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_87: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_4689; Missing policy fact 'within_retention_period' for search_index_service/audit_record_4474; Missing policy fact 'restore_blockable' for search_index_service/backup_4689; Missing policy fact 'within_retention_period' for security_service/audit_record_4474",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_88",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_88: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for search_index_service/audit_record_3825; Missing policy fact 'shared_context' for search_index_service/support_2967; Missing policy fact 'within_retention_period' for security_service/audit_record_3825; Missing policy fact 'shared_context' for support_platform/support_2967",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_92",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_92: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for search_index_service/audit_record_5625; Missing policy fact 'within_retention_period' for security_service/audit_record_5625",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_98",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_98: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_99",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_99: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_7804",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_103",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_103: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_9522",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_107",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_107: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_7572",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_108",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_108: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_1469",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_111",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_111: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_8933",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_112",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_112: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_4082; Missing policy fact 'shared_context' for support_platform/support_2859",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_123",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_123: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_8742",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_128",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_128: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_147",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_147: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_4244",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_155",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_155: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_4199; Missing policy fact 'shared_context' for support_platform/support_7867",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_157",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_157: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_8821",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_159",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_159: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_1214; Missing policy fact 'within_retention_period' for security_service/audit_record_8742",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_162",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_162: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_6362",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_171",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_171: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_5520",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_175",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_175: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_549; Missing policy fact 'shared_context' for support_platform/support_8164",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_179",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_179: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_2283",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_204",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_204: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_2736; Missing policy fact 'shared_context' for support_platform/support_9505",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_206",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_206: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_9878",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_207",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_207: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_6407; Missing policy fact 'within_retention_period' for security_service/audit_record_3578",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_213",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_213: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_5626",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_224",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_224: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_231",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_231: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_3964",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_232",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_232: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_9862",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_233",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_233: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_9670",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_235",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_235: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_9391",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_248",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_248: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_253",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_253: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_2927",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_255",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_255: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_2427; Missing policy fact 'within_retention_period' for security_service/audit_record_2513",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_257",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_257: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_7193",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_260",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_260: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_1876",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_264",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_264: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_3250; Missing policy fact 'within_retention_period' for security_service/audit_record_6711; Missing policy fact 'shared_context' for support_platform/support_9996",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_265",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_265: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_6378",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_267",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_267: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_6621",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_277",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_277: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_2036",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_279",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_279: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_8588",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_280",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_280: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_7073",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_282",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_282: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_8370",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_284",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_284: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_291",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_291: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_7079",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_292",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_292: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_1526",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_297",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_297: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_7308; Missing policy fact 'shared_context' for support_platform/support_1983",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_303",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_303: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_4935; Missing policy fact 'within_retention_period' for security_service/audit_record_7923",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_304",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_304: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_4759",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_308",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_308: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_3221; Missing policy fact 'shared_context' for support_platform/support_6046",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_309",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_309: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_1945",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_315",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_315: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_7421",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_324",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_324: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_7249",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_326",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_326: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_305",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_331",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_331: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_1403",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_335",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_335: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_3136",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_342",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_342: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_3399",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_350",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_350: policy evaluation failed: Cannot establish COMPLETE without evidence-backed verification",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_351",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_351: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_7137",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_354",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_354: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_9286",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_362",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_362: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_8638",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_363",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_363: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_7253; Missing policy fact 'within_retention_period' for security_service/audit_record_9777",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_369",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_369: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_337",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_399",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_399: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_2642",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_403",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_403: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_4733",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_408",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_408: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_4216",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_409",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_409: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_2559",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_411",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_411: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_4330",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_412",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_412: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_5637",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_435",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_435: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_5237; Missing policy fact 'within_retention_period' for downstream_delivery_service/audit_record_9695; Missing policy fact 'restore_blockable' for downstream_delivery_service/backup_5237; Missing policy fact 'within_retention_period' for security_service/audit_record_9695",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_447",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_447: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_5192",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_456",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_456: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_8176",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_457",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_457: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_1171",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_458",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_458: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_6750",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_459",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_459: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_1140; Missing policy fact 'within_retention_period' for security_service/audit_record_6171",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_462",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_462: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_641",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_464",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_464: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_5586",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_471",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_471: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_7543",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_479",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_479: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_2180; Missing policy fact 'within_retention_period' for security_service/audit_record_4197; Missing policy fact 'within_retention_period' for security_service/audit_record_519; Missing policy fact 'within_retention_period' for security_service/audit_record_5667; Missing policy fact 'within_retention_period' for security_service/audit_record_5745; Missing policy fact 'within_retention_period' for security_service/audit_record_5745; Missing policy fact 'within_retention_period' for security_service/audit_record_6405; Missing policy fact 'within_retention_period' for security_service/audit_record_712; Missing policy fact 'within_retention_period' for security_service/audit_record_7742; Missing policy fact 'within_retention_period' for security_service/audit_record_8754; Missing policy fact 'within_retention_period' for security_service/audit_record_9025; Missing policy fact 'shared_context' for support_platform/support_4665; Missing policy fact 'shared_context' for support_platform/support_4665",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_480",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_480: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Unknown resource state for applicable policy: backup_7706; Missing policy fact 'within_retention_period' for security_service/audit_record_2180; Missing policy fact 'within_retention_period' for security_service/audit_record_4197; Missing policy fact 'within_retention_period' for security_service/audit_record_519; Missing policy fact 'within_retention_period' for security_service/audit_record_5667; Missing policy fact 'within_retention_period' for security_service/audit_record_5745; Missing policy fact 'within_retention_period' for security_service/audit_record_6405; Missing policy fact 'within_retention_period' for security_service/audit_record_712; Missing policy fact 'within_retention_period' for security_service/audit_record_7742; Missing policy fact 'within_retention_period' for security_service/audit_record_7742; Missing policy fact 'within_retention_period' for security_service/audit_record_8754; Missing policy fact 'within_retention_period' for security_service/audit_record_9025; Missing policy fact 'shared_context' for support_platform/support_3824; Missing policy fact 'shared_context' for support_platform/support_4509; Missing policy fact 'shared_context' for support_platform/support_5854; Missing policy fact 'shared_context' for support_platform/support_5854",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_484",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_484: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_7973",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_495",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_495: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_5061",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_503",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_503: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_5454; Missing policy fact 'shared_context' for support_platform/support_2295",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_506",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_506: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_1361",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_507",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_507: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_369; Missing policy fact 'within_retention_period' for security_service/audit_record_7627",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_512",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_512: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_4219",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_516",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_516: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_3777",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_519",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_519: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_8264; Missing policy fact 'within_retention_period' for security_service/audit_record_4027",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_520",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_520: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_9504; Missing policy fact 'shared_context' for support_platform/support_9251",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_521",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_521: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_3567",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_522",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_522: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_5513; Missing policy fact 'shared_context' for support_platform/support_8538",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_531",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_531: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'restore_blockable' for backup_service/backup_3382",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_532",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_532: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'shared_context' for support_platform/support_7724",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_534",
+      "stage": "evidence_discovery",
+      "blocker_reason": "case case_534: no cutoff-valid evidence links the resolved subject to a resource; the audit cannot assert absence from an empty search result",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_537",
+      "stage": "evidence_discovery",
+      "blocker_reason": "case case_537: no cutoff-valid evidence links the resolved subject to a resource; the audit cannot assert absence from an empty search result",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_538",
+      "stage": "evidence_discovery",
+      "blocker_reason": "case case_538: no cutoff-valid evidence links the resolved subject to a resource; the audit cannot assert absence from an empty search result",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_539",
+      "stage": "evidence_discovery",
+      "blocker_reason": "case case_539: no cutoff-valid evidence links the resolved subject to a resource; the audit cannot assert absence from an empty search result",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_543",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_543: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_6244",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_544",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_544: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_1037",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_545",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_545: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_5041",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_546",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_546: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_518",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_547",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_547: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_7352",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_548",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_548: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_6970",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_549",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_549: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_1491",
+      "exception_type": "PipelineBlockedError"
+    },
+    {
+      "case_id": "case_550",
+      "stage": "policy_evaluation",
+      "blocker_reason": "case case_550: policy evaluation failed: Insufficient evidence to decide policy applicability or state: Missing policy fact 'within_retention_period' for security_service/audit_record_3831",
+      "exception_type": "PipelineBlockedError"
+    }
+  ]
+}
