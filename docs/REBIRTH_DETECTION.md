@@ -19,4 +19,4 @@ Evidence references not in `EvidenceIndex` or captured after `audit_at` are igno
 ## Limitations and Member 4 integration
 Coverage completeness and evidence extraction are upstream assertions; this checkout has no evidence-processing or policy module. Use the function as an additive post-investigation analysis. Build typed inputs from parser outputs, pass the case `audit_at`, an index containing provenance for all evidence IDs, and a complete `expected_systems` list. Serialize each finding using dataclass fields and enum `.value`; the frontend payload is specified by `schema/rebirth-finding.schema.json`. The checked-in example is explicitly synthetic; repository data has no parsed rebirth finding fixture, so it makes no factual production claim.
 
-Run tests: `python -B -m unittest code.tests.test_rebirth_detection -v`.
+Run tests: `python -B -m unittest tests.test_rebirth_detection -v`.

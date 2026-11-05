@@ -2,7 +2,7 @@
 
 ## Readiness
 
-**Submission status: NO-GO.** The independent replay processed all 518 requests and reproduced 381 contract-valid, evidence-cited candidate rows; 137 requests remain unresolved. The 381 rows are preserved in `partial_validated_rows_not_for_submission.csv` with a manifest at `code/evaluation/partial_replay_manifest.json`. A case-by-case fallback classification for all 137 blockers is at `code/evaluation/fallback_case_classification.json`. This file is diagnostic only and is not a substitute for the required root `output.csv`. The official writer correctly rejects fewer than 518 rows, and root `output.csv` remains absent.
+**Submission status: NO-GO.** The independent replay processed all 518 requests and reproduced 381 contract-valid, evidence-cited candidate rows; 137 requests remain unresolved. The 381 rows are preserved in `results/partial_validated_rows_not_for_submission.csv` with a manifest at `evaluation/partial_replay_manifest.json`. A case-by-case fallback classification for all 137 blockers is at `evaluation/fallback_case_classification.json`. These files are diagnostic only and are not substitutes for the required root `output.csv`. The official writer correctly rejects fewer than 518 rows, and root `output.csv` remains absent.
 
 | Metric | Result |
 |---|---:|
@@ -38,11 +38,11 @@ Case15 returned an `INCOMPLETE` decision with a high-severity active-flow risk. 
 
 ## Regression and integration validation
 
-- **Full unittest discovery:** 129 top-level tests ran; 128 passed and 1 errored. The error is `test_sample_dataset_identity_and_policy_scenarios`, which stops at `case_01` because no cutoff-valid evidence links the resolved subject to a resource. It is not an intent-classifier regression. The separate `code/tests` discovery ran 37 tests and all passed (166 total across both discovery commands: 165 passed, 1 error).
+- **Full unittest discovery after root test reorganization:** `./scripts/run_tests.sh` ran 167 tests: 163 passed, 3 skipped, and 1 errored. The sole error is `test_sample_dataset_identity_and_policy_scenarios`, which stops at `case_01` because no cutoff-valid evidence links the resolved subject to a resource. This is the known fail-closed sample blocker, not a test-discovery or intent-classifier regression.
 - **Explainability safeguard:** M3's verified safeguard is now integrated: COMPLETE verification citations must resolve to indexed evidence records; activity-only and identity-audit-only citations are rejected. Focused explainability and adapter tests: 12 passed.
 - **Case26 isolated replay:** intent is `VERIFY_ONLY`, identity resolves uniquely to `user_26`, four observations are found, and policy blocks before producing a row. The regression confirms no unsupported `COMPLETE` row or remediation is returned.
-- **Independent 518-request replay:** 381 candidate rows passed per-row contract, evidence-reference, and audit-cutoff validation; 137 requests remain unresolved. The unresolved cases and reasons are retained in `code/evaluation/replay_diagnostics.json` and `code/evaluation/unresolved_case_audit.json`.
-- **Partial artifact:** `partial_validated_rows_not_for_submission.csv` has 381 sorted, unique rows with the exact header. Its sidecar records the replay count, validation checks, and source-diagnostic hashes. It is diagnostic only.
+- **Independent 518-request replay:** 381 candidate rows passed per-row contract, evidence-reference, and audit-cutoff validation; 137 requests remain unresolved. The unresolved cases and reasons are retained in `evaluation/replay_diagnostics.json` and `evaluation/unresolved_case_audit.json`.
+- **Partial artifact:** `results/partial_validated_rows_not_for_submission.csv` has 381 sorted, unique rows with the exact header. Its sidecar records the replay count, validation checks, and source-diagnostic hashes. It is diagnostic only.
 - **Official output:** root `output.csv` was not generated. The official writer rejects partial row counts, as required.
 - Web integration tests exercised case selection, verification, and the read-only What-If endpoint. What-If does not execute remediation or mutate the audit decision.
 

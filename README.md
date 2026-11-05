@@ -174,16 +174,13 @@ The hosted demo configuration is restricted to the 32 public sample cases.
 
 The latest reported test results include:
 
-| Test suite | Result |
-|---|---:|
-| Explainability focused tests | 12 passed |
-| Main test discovery | 128 passed, 1 error |
-| Identity and Rebirth tests | 37 passed |
-| Hosted web-app tests | 8/8 passed |
+Run the current suite from the repository root:
 
-The remaining integration test error concerns case 01, where cutoff-valid evidence does not establish a subject-to-resource link.
+```bash
+./scripts/run_tests.sh
+```
 
-Test results should be interpreted alongside the evaluation limitations below.
+Latest result after repository reorganization: 167 tests ran, 163 passed, 3 skipped, and 1 errored. The single known error is the sample replay stopping at case 01 because cutoff-valid evidence does not establish a subject-to-resource link. The skips are optional PDF parser tests because `pypdf` is not installed. See [`evaluation/evaluation_report.md`](./evaluation/evaluation_report.md) for the complete result and limitations.
 
 ---
 
@@ -211,9 +208,9 @@ A Render deployment configuration is provided through `render.yaml`.
 
 The hosted configuration is designed for the Render Free plan and restricts the demo to public sample cases.
 
-**Deployment status: Prepared, not yet publicly deployed.**
+**Hosted demo:** [https://deadbyte-demo.onrender.com](https://deadbyte-demo.onrender.com)
 
-A public URL will be added here after deployment and successful verification.
+The Render service uses the repository's `main` branch, serves only the public sample cases, and exposes `/api/health` for health checks. Render's free service may sleep after inactivity; the first request can take longer while it starts.
 
 ---
 
@@ -221,26 +218,26 @@ A public URL will be added here after deployment and successful verification.
 
 ```text
 cooked.exe/
-│
 ├── code/                       # Application source and backend
-├── dataset/                    # Hackathon evidence dataset
-├── docs/                       # Project documentation
-├── evaluation/                 # Evaluation reports and diagnostics
-├── results/                    # Generated results and demo outputs
-├── scripts/                    # Utility and execution scripts
-├── tests/                      # Test suite
-│
-├── AGENTS.md                   # Agent instructions
-├── README.md                   # Project documentation
-├── agent_trace_instructions.md # Agent trace requirements
-├── log.txt                     # Development activity log
-├── problem_statement.md        # Challenge problem statement
-├── render.yaml                 # Render deployment configuration
-├── code.zip                    # Packaged application
-└── agent-trace.zip             # Agent execution traces
+├── dataset/                    # Participant-facing challenge data
+├── docs/                       # Architecture and feature documentation
+├── evaluation/                 # Reports and replay diagnostics
+├── results/                    # Clearly labelled diagnostic artifacts
+├── scripts/                    # Demo, test, evaluation and packaging tools
+├── tests/                      # Unit and integration suite
+├── .gitignore
+├── AGENTS.md
+├── CLAUDE.md
+├── README.md
+├── agent-trace.zip
+├── agent_trace_instructions.md
+├── code.zip
+├── log.txt
+├── problem_statement.md
+└── render.yaml
 ```
 
-Directory placement may vary slightly depending on the final repository organization.
+No official root `output.csv` is present because 137 requests remain unresolved. The 381-row diagnostic CSV is kept under `results/` and must not be submitted as the official output.
 
 ---
 

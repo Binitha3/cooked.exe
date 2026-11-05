@@ -76,7 +76,8 @@ class DeadbyteWebAppTests(unittest.TestCase):
     def test_frontend_has_visible_navigation_to_integrated_features(self) -> None:
         from pathlib import Path
 
-        html = (Path(__file__).parent / "web" / "index.html").read_text(encoding="utf-8")
+        repository_root = Path(__file__).resolve().parents[1]
+        html = (repository_root / "code" / "web" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<nav class="feature-nav" aria-label="Investigation feature navigation">', html)
         for target in ("ghost-map-panel", "timeline-panel", "explainability-panel", "rebirth-panel"):
             self.assertIn(f'href="#{target}"', html)
