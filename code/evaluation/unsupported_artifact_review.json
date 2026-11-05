@@ -1,0 +1,287 @@
+{
+  "schema_version": "deadbyte-unsupported-artifact-review.v1",
+  "review_method": "PDF text extraction uses the locally installed pypdf package where present. Image notes are a visual review only; no OCR output is represented as machine extraction.",
+  "local_ocr_availability": {
+    "pytesseract": false,
+    "tesseract_binary": false,
+    "native_vision_attempted": true,
+    "native_vision_result": "Vision request failed in this sandbox while creating CVPixelBuffer; image parser remains UNSUPPORTED.",
+    "image_ocr_records_integrated": 0
+  },
+  "case_reviews": [
+    {
+      "case_id": "case_33",
+      "audit_at": "2026-07-19T13:00:00+00:00",
+      "subject_resource_linkage_verified": true,
+      "artifacts": [
+        {
+          "file_id": "evidence_23",
+          "file_path": "evidence/images/customer_export_console_20260618.png",
+          "origin": "export_service",
+          "captured_at": "2026-06-18T12:00:00+00:00",
+          "audit_at": "2026-07-19T13:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "png",
+          "parser_status": "UNSUPPORTED",
+          "parser_errors": [
+            {
+              "code": "OCR_UNAVAILABLE",
+              "message": "pytesseract is not installed; PNG retained without OCR"
+            }
+          ],
+          "locator": "image:table-row:export_1260",
+          "used_by_pipeline": false
+        }
+      ],
+      "visual_review_only_facts": [
+        "Selected export is shown Ready with an expiry date. The capture predates this case audit cutoff by weeks and the displayed expiry precedes the cutoff. It does not establish availability or deletion at cutoff."
+      ],
+      "pipeline_conclusion": "Not ingested; no OCR backend."
+    },
+    {
+      "case_id": "case_34",
+      "audit_at": "2026-09-27T13:00:00+00:00",
+      "subject_resource_linkage_verified": true,
+      "artifacts": [
+        {
+          "file_id": "evidence_04",
+          "file_path": "evidence/images/account_admin_console_20260926.png",
+          "origin": "account_admin_portal",
+          "captured_at": "2026-09-26T11:00:00+00:00",
+          "audit_at": "2026-09-27T13:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "png",
+          "parser_status": "UNSUPPORTED",
+          "parser_errors": [
+            {
+              "code": "OCR_UNAVAILABLE",
+              "message": "pytesseract is not installed; PNG retained without OCR"
+            }
+          ],
+          "locator": "image:profile-header:user_11/account_5762",
+          "used_by_pipeline": false
+        }
+      ],
+      "visual_review_only_facts": [
+        "Profile UI shows direct identifiers and support ticket reference support_9538. The screen does not establish the retention period for audit_record_3753 or whether support conversation context must be retained."
+      ],
+      "pipeline_conclusion": "Not ingested; no OCR backend."
+    },
+    {
+      "case_id": "case_35",
+      "audit_at": "2026-09-02T08:00:00+00:00",
+      "subject_resource_linkage_verified": true,
+      "artifacts": [
+        {
+          "file_id": "evidence_09",
+          "file_path": "evidence/images/search_index_inspector_20260901.png",
+          "origin": "search_index_admin",
+          "captured_at": "2026-09-01T06:00:00+00:00",
+          "audit_at": "2026-09-02T08:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "png",
+          "parser_status": "UNSUPPORTED",
+          "parser_errors": [
+            {
+              "code": "OCR_UNAVAILABLE",
+              "message": "pytesseract is not installed; PNG retained without OCR"
+            }
+          ],
+          "locator": "image:search-result-row:search_428",
+          "used_by_pipeline": false
+        }
+      ],
+      "visual_review_only_facts": [
+        "Search result is linked to user_13 and the searched identifier. The displayed query execution timestamp is 14 seconds later than manifest capture time, so the image has an internal timestamp conflict."
+      ],
+      "pipeline_conclusion": "Not ingested; no OCR backend."
+    },
+    {
+      "case_id": "case_39",
+      "audit_at": "2026-08-08T10:00:00+00:00",
+      "subject_resource_linkage_verified": true,
+      "artifacts": [
+        {
+          "file_id": "evidence_14",
+          "file_path": "evidence/images/connector_management_console_20260807.png",
+          "origin": "integration_admin",
+          "captured_at": "2026-08-07T08:00:00+00:00",
+          "audit_at": "2026-08-08T10:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "png",
+          "parser_status": "UNSUPPORTED",
+          "parser_errors": [
+            {
+              "code": "OCR_UNAVAILABLE",
+              "message": "pytesseract is not installed; PNG retained without OCR"
+            }
+          ],
+          "locator": "image:topology-row:data_flow_1121",
+          "used_by_pipeline": false
+        }
+      ],
+      "visual_review_only_facts": [
+        "Connector UI shows a continuous, healthy flow with the subject selector and recent delivery activity. It supports active-flow presence at capture, not a later disablement or post-remediation verification."
+      ],
+      "pipeline_conclusion": "Not ingested; no OCR backend."
+    },
+    {
+      "case_id": "case_45",
+      "audit_at": "2026-09-06T09:00:00+00:00",
+      "subject_resource_linkage_verified": true,
+      "artifacts": [
+        {
+          "file_id": "evidence_37",
+          "file_path": "evidence/images/security_audit_explorer_20260905.png",
+          "origin": "security_service",
+          "captured_at": "2026-09-05T07:00:00+00:00",
+          "audit_at": "2026-09-06T09:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "png",
+          "parser_status": "UNSUPPORTED",
+          "parser_errors": [
+            {
+              "code": "OCR_UNAVAILABLE",
+              "message": "pytesseract is not installed; PNG retained without OCR"
+            }
+          ],
+          "locator": "image:selected-event:audit_record_003",
+          "used_by_pipeline": false
+        },
+        {
+          "file_id": "evidence_55",
+          "file_path": "evidence/documents/security_retention_extract.pdf",
+          "origin": "security_service",
+          "captured_at": "2026-09-05T06:30:00+00:00",
+          "audit_at": "2026-09-06T09:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "pdf",
+          "parser_status": "PARSED",
+          "parser_errors": [],
+          "locator": "pdf:page:1",
+          "used_by_pipeline": true
+        }
+      ],
+      "visual_review_only_facts": [
+        "The PDF is machine-extracted and confirms subject_reference user_03, event reference audit_record_003, recorded_at 2026-08-25T04:03:00Z, retain_until 2027-08-25T04:03:00Z, compliance-ledger storage and valid integrity seal. The screenshot visually corroborates the selected event."
+      ],
+      "pipeline_conclusion": "evidence_55 is parsed and cited; the pipeline now emits one VERIFY_RECORD_PRESENT step and a COMPLETE row."
+    },
+    {
+      "case_id": "case_50",
+      "audit_at": "2026-07-14T12:00:00+00:00",
+      "subject_resource_linkage_verified": true,
+      "artifacts": [
+        {
+          "file_id": "evidence_19",
+          "file_path": "evidence/images/analytics_profile_view_20260713.png",
+          "origin": "analytics_platform",
+          "captured_at": "2026-07-13T10:00:00+00:00",
+          "audit_at": "2026-07-14T12:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "png",
+          "parser_status": "UNSUPPORTED",
+          "parser_errors": [
+            {
+              "code": "OCR_UNAVAILABLE",
+              "message": "pytesseract is not installed; PNG retained without OCR"
+            }
+          ],
+          "locator": "image:analytics-user-header:user_20/analytics_7438",
+          "used_by_pipeline": false
+        }
+      ],
+      "visual_review_only_facts": [
+        "Analytics UI visibly links user_20 to analytics_7438 and exposes profile activity. Its displayed last-activity time is later than the manifest capture time, so the time display is internally inconsistent."
+      ],
+      "pipeline_conclusion": "Not ingested; no OCR backend."
+    },
+    {
+      "case_id": "case_52",
+      "audit_at": "2026-06-19T14:00:00+00:00",
+      "subject_resource_linkage_verified": true,
+      "artifacts": [
+        {
+          "file_id": "evidence_23",
+          "file_path": "evidence/images/customer_export_console_20260618.png",
+          "origin": "export_service",
+          "captured_at": "2026-06-18T12:00:00+00:00",
+          "audit_at": "2026-06-19T14:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "png",
+          "parser_status": "UNSUPPORTED",
+          "parser_errors": [
+            {
+              "code": "OCR_UNAVAILABLE",
+              "message": "pytesseract is not installed; PNG retained without OCR"
+            }
+          ],
+          "locator": "image:table-row:export_1260",
+          "used_by_pipeline": false
+        }
+      ],
+      "visual_review_only_facts": [
+        "The export is shown Ready with an expiry later than this case cutoff. The capture is before cutoff but is not a cutoff-time readback."
+      ],
+      "pipeline_conclusion": "Not ingested; no OCR backend."
+    },
+    {
+      "case_id": "case_53",
+      "audit_at": "2026-05-25T09:00:00+00:00",
+      "subject_resource_linkage_verified": true,
+      "artifacts": [
+        {
+          "file_id": "evidence_28",
+          "file_path": "evidence/images/support_ticket_console_20260524.png",
+          "origin": "support_platform",
+          "captured_at": "2026-05-24T07:00:00+00:00",
+          "audit_at": "2026-05-25T09:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "png",
+          "parser_status": "UNSUPPORTED",
+          "parser_errors": [
+            {
+              "code": "OCR_UNAVAILABLE",
+              "message": "pytesseract is not installed; PNG retained without OCR"
+            }
+          ],
+          "locator": "image:ticket-header:support_1034",
+          "used_by_pipeline": false
+        }
+      ],
+      "visual_review_only_facts": [
+        "Support UI links the ticket to the subject and displays email and order-conversation context. It does not by itself establish the applicable attachment/retention policy fact."
+      ],
+      "pipeline_conclusion": "Not ingested; no OCR backend."
+    },
+    {
+      "case_id": "case_55",
+      "audit_at": "2026-04-30T11:00:00+00:00",
+      "subject_resource_linkage_verified": true,
+      "artifacts": [
+        {
+          "file_id": "evidence_32",
+          "file_path": "evidence/images/backup_restore_console_20260429.png",
+          "origin": "backup_service",
+          "captured_at": "2026-04-29T09:00:00+00:00",
+          "audit_at": "2026-04-30T11:00:00+00:00",
+          "cutoff_valid": true,
+          "format": "png",
+          "parser_status": "UNSUPPORTED",
+          "parser_errors": [
+            {
+              "code": "OCR_UNAVAILABLE",
+              "message": "pytesseract is not installed; PNG retained without OCR"
+            }
+          ],
+          "locator": "image:archive-table-row:backup_9287",
+          "used_by_pipeline": false
+        }
+      ],
+      "visual_review_only_facts": [
+        "The selected subject-linked archive is backup_9287 (backup_9286 is another account). The UI records archive creation, a completed restore, and a retention end after the audit cutoff. It does not say whether restore access can be blocked."
+      ],
+      "pipeline_conclusion": "Not ingested; no OCR backend."
+    }
+  ]
+}

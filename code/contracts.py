@@ -36,6 +36,7 @@ class ReportedStatus(StringEnum):
 
 class Intent(StringEnum):
     DELETE = "DELETE"
+    VERIFY_ONLY = "VERIFY_ONLY"
     NOT_DELETE = "NOT_DELETE"
     AMBIGUOUS = "AMBIGUOUS"
 

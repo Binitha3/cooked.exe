@@ -1,0 +1,5 @@
+Dependencies for this handoff:
+- Python 3.10+ (standard library only for the explainability adapter and tests).
+- The full DEADBYTE repository provides code/contracts.py and code/policy_engine.py, imported by the implementation and tests.
+- Run tests from repository root with: python -m unittest code.test_explainability code.test_explainability_adapter
+- No datasets, virtual environment, cache, or secrets are included.

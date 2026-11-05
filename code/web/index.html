@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DEADBYTE verifies deletion claims against identity, activity, policy, and participant-visible evidence.">
+  <meta name="theme-color" content="#050506">
+  <title>DEADBYTE — Deletion verification</title>
+  <link rel="stylesheet" href="/app.css?v=mono2">
+  <script src="/app.js?v=orbit2" defer></script>
+</head>
+<body>
+  <canvas id="particle-field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="DEADBYTE home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18.2"></circle>
+        <path d="M13 13h12v14H13zM11 28l18-17"></path>
+      </svg>
+      <span class="brand-copy"><strong>DEADBYTE</strong><small>Deletion verification</small></span>
+    </a>
+    <div class="case-picker">
+      <label for="case-select">CASE FILE</label>
+      <select id="case-select" aria-label="Choose a deletion request">
+        <option>Loading requests…</option>
+      </select>
+    </div>
+    <div class="counter-wrap">
+      <div class="counter" id="residual-counter" aria-label="Residual resources not yet evaluated">—</div>
+      <span>RESIDUAL RESOURCES</span>
+    </div>
+  </header>
+
+  <nav class="feature-nav" aria-label="Investigation feature navigation">
+    <a href="#ghost-map-panel">Ghost Data Map</a>
+    <a href="#timeline-panel">Evidence Timeline</a>
+    <a href="#explainability-panel">Risks &amp; What-If</a>
+    <a href="#rebirth-panel">Rebirth Trail</a>
+  </nav>
+
+  <main class="shell">
+    <section class="left-rail" aria-label="Discovered evidence traces">
+      <div class="rail-heading">
+        <div>
+          <p class="eyebrow">AUDIT SURFACE</p>
+          <h1>Evidence traces</h1>
+        </div>
+        <span class="count-label" id="observation-count">—</span>
+      </div>
+      <div class="filter-row" id="filters" aria-label="Filter evidence traces"></div>
+      <div class="trace-list" id="trace-list" role="list">
+        <div class="empty-state">Choose a case, then run verification to discover evidence.</div>
+      </div>
+      <div class="rail-footer">
+        <button class="verify-button" id="verify-button" type="button">
+          <span class="button-orbit" aria-hidden="true"></span>
+          <span class="button-label">Run verification</span>
+          <span class="button-arrow" aria-hidden="true">↗</span>
+        </button>
+        <p class="execution-note">EVIDENCE REVIEW ONLY · NO DELETION EXECUTED</p>
+      </div>
+    </section>
+
+    <section class="center-stage" aria-label="Evidence visualization">
+      <div class="stage-coordinate coordinate-top">LIVE EVIDENCE / <span id="stage-case">—</span></div>
+      <div class="ring-guide ring-guide-outer" aria-hidden="true"></div>
+      <div class="ring-guide ring-guide-inner" aria-hidden="true"></div>
+      <div class="stage-crosshair" aria-hidden="true"></div>
+      <div class="stage-status" id="stage-status">
+        <span class="pulse-dot"></span><span>AWAITING CASE REVIEW</span>
+      </div>
+      <div class="map-panel" id="ghost-map-panel" tabindex="-1">
+        <div class="map-header">
+          <div><p class="eyebrow">RELATIONSHIPS FROM EVIDENCE</p><h2>Ghost Data Map</h2></div>
+          <span class="map-key"><i></i> EVIDENCE-BACKED</span>
+        </div>
+        <svg id="ghost-map" viewBox="0 0 540 180" role="img" aria-label="Evidence-backed resource relationships"></svg>
+        <p class="map-caption" id="map-caption">No case loaded. The map draws only relationships established in evidence.</p>
+        <details class="map-provenance" id="map-provenance-details">
+          <summary>Inspect graph nodes and provenance</summary>
+          <div id="map-provenance"></div>
+        </details>
+      </div>
+      <div class="stage-coordinate coordinate-bottom">EVIDENCE-SEEDED PARTICLE FIELD · VISUAL TEXTURE ONLY</div>
+    </section>
+
+    <aside class="right-column" id="about-panel">
+      <div class="case-kicker"><span class="kicker-line"></span><span>INDEPENDENT DELETION AUDIT</span></div>
+      <section class="case-summary" aria-live="polite">
+        <p class="eyebrow">SELECTED REQUEST</p>
+        <h2 id="case-title">Select a case to begin</h2>
+        <p class="request-text" id="request-text">The audit will use the selected request, its audit cutoff, and the evidence available in the dataset.</p>
+        <div class="request-meta">
+          <span><small>SUBMITTED</small><b id="requested-at">—</b></span>
+          <span><small>AUDIT CUTOFF</small><b id="audit-at">—</b></span>
+          <span><small>REPORTED CLAIM</small><b id="reported-status">—</b></span>
+        </div>
+      </section>
+      <section class="verdict-panel" aria-live="polite">
+        <div class="verdict-top"><p class="eyebrow">POLICY DECISION</p><span class="verdict-spark" id="verdict-spark"></span></div>
+        <h2 id="verdict">NOT YET RUN</h2>
+        <p id="verdict-message">Run verification to invoke identity resolution, evidence discovery, and policy evaluation.</p>
+      </section>
+      <section class="how-block">
+        <p class="eyebrow">AUDIT SEQUENCE</p>
+        <ol>
+          <li><span>01</span> Resolve current and historical identity</li>
+          <li><span>02</span> Discover evidence as of the cutoff</li>
+          <li><span>03</span> Evaluate the supplied deletion policy</li>
+        </ol>
+      </section>
+      <section class="decision-block">
+        <div class="block-title"><p class="eyebrow">POLICY STEPS</p><span id="step-total">—</span></div>
+        <div id="step-list" class="step-list"><p class="dim-copy">No policy decision yet.</p></div>
+      </section>
+      <section class="feature-block timeline-block" id="timeline-panel" aria-live="polite">
+        <div class="block-title"><p class="eyebrow">INVESTIGATION TIMELINE</p><span id="timeline-total">NOT RUN</span></div>
+        <div id="timeline-list" class="feature-list"><p class="dim-copy">Run verification to view cutoff-valid evidence events.</p></div>
+      </section>
+      <section class="feature-block" id="explainability-panel" aria-live="polite">
+        <div class="block-title"><p class="eyebrow">EXPLAINABLE RISKS</p><span id="risk-total">NOT RUN</span></div>
+        <div id="risk-list" class="feature-list"><p class="dim-copy">Run verification to build evidence-backed explanations.</p></div>
+      </section>
+      <section class="feature-block rebirth-block" id="rebirth-panel" aria-live="polite">
+        <div class="block-title"><p class="eyebrow">TEMPORAL REBIRTH TRAIL</p><span id="rebirth-status">NOT RUN</span></div>
+        <div id="rebirth-list" class="feature-list"><p class="dim-copy">Reappearance analysis has not run.</p></div>
+      </section>
+      <p class="disclaimer">RECOMMENDATIONS DESCRIBE FUTURE WORK. THIS TOOL DOES NOT DELETE OR CHANGE RECORDS.</p>
+    </aside>
+  </main>
+
+  <aside class="evidence-drawer" id="evidence-drawer" aria-labelledby="drawer-title" aria-hidden="true">
+    <div class="drawer-top"><div><p class="eyebrow">EVIDENCE INSPECTOR</p><h2 id="drawer-title">Resource details</h2></div><button type="button" class="close-button" id="close-drawer" aria-label="Close evidence drawer">×</button></div>
+    <div id="drawer-content" class="drawer-content"></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
