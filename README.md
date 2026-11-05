@@ -1,192 +1,256 @@
-# HackerRank Orchestrate - October 2026
+# DEADBYTE — AI-Powered Data Deletion Verification
 
-## Ghost Data Still Exists
+### Deleted doesn't mean gone.
 
-Build an AI agent that audits whether a user's personal data was actually deleted.
+**DEADBYTE** is an AI-powered data deletion verification platform designed to investigate whether personal data has actually been removed after a deletion request.
 
-A deletion workflow may report **Complete** while data still exists in databases, logs, support attachments, exports, search indexes, archives, or backups. Sync and restore processes may also bring deleted data back.
+Deleting data from one database does not guarantee that it has disappeared everywhere. Copies may remain in backups, analytics systems, search indexes, support platforms, exports, and third-party integrations.
 
-For each request, the agent must first determine whether deletion was actually requested. It then returns `COMPLETE`, `INCOMPLETE`, or `NOT_APPLICABLE`, reports any remaining data or recreation risk, and produces the ordered remediation and verification steps required to finish an authorized deletion safely.
-
-Read [`problem_statement.md`](./problem_statement.md) for the complete challenge contract.
+DEADBYTE investigates these potential remnants, traces evidence across systems, identifies unresolved risks, and generates explainable, evidence-backed deletion audit decisions.
 
 ---
 
-## Quick Start
+## The Problem
 
-Clone the repository and move into the project directory:
+When users request deletion of their personal data, organizations may confirm that a deletion operation succeeded without verifying whether all copies and downstream data flows have been addressed.
+
+Residual personal information can remain in:
+
+- Database records and historical snapshots
+- Backup and restore systems
+- Analytics and telemetry platforms
+- Search indexes and cached records
+- Customer support conversations and attachments
+- Data exports and third-party integrations
+
+A successful deletion message is not necessarily proof of complete deletion.
+
+## Our Solution
+
+DEADBYTE performs evidence-driven deletion verification.
+
+It combines identity resolution, evidence processing, policy evaluation, explainability, and visual investigation tools to help determine whether deletion is complete or whether further action is required.
+
+The system follows a fail-closed approach: when evidence is insufficient, it reports uncertainty instead of making unsupported compliance claims.
+
+---
+
+## Key Features
+
+### 1. Identity Resolution
+- Resolves historical and current user identifiers.
+- Supports identity matching using available evidence.
+- Applies audit cutoffs to prevent future information from influencing past decisions.
+
+### 2. Evidence Processing
+- Processes supported structured and unstructured evidence sources.
+- Extracts resource observations, timestamps, identifiers, and provenance.
+- Preserves source references and evidence locators.
+- Distinguishes reported activity from verified deletion evidence.
+
+### 3. Ghost Data Map
+- Visualizes systems, resources, and evidence-supported relationships.
+- Displays residual data and trace-linked relationships.
+- Helps investigators understand where data may remain.
+- Avoids inventing relationships that are not supported by evidence.
+
+### 4. Explainability Engine
+- Generates risk cards and policy explanations.
+- Displays evidence provenance and uncertainty.
+- Explains why a deletion decision or finding was produced.
+- Requires indexed evidence records for COMPLETE verification.
+
+### 5. What-If Simulator
+- Previews proposed remediation actions.
+- Highlights potential risk reduction and remaining dependencies.
+- Identifies verification requirements.
+- Does not execute deletion or modify the underlying decision.
+
+### 6. Temporal Rebirth Detection
+- Compares pre-deletion and later evidence snapshots.
+- Investigates possible data reappearance.
+- Uses evidence-backed snapshot coverage and cause attribution.
+- Reports INDETERMINATE when evidence is insufficient.
+
+---
+
+## How It Works
+
+The application follows an evidence-driven investigation pipeline:
+
+1. **Request Classification** — identifies the intent of the deletion request.
+2. **Identity Resolution** — resolves the subject using available identity records.
+3. **Evidence Ingestion** — processes evidence files and preserves provenance.
+4. **Resource Discovery** — identifies potentially associated records and data flows.
+5. **Policy Evaluation** — evaluates observations against applicable deletion rules.
+6. **Explainability** — generates risk explanations and evidence references.
+7. **Remediation Planning** — identifies supported corrective actions.
+8. **Verification** — determines whether the available evidence supports a deletion decision.
+9. **Rebirth Detection** — investigates possible reappearance across available snapshots.
+
+---
+
+## Decision Philosophy
+
+DEADBYTE does not equate a successful deletion operation with verified deletion.
+
+| Status | Meaning |
+|---|---|
+| COMPLETE | Evidence-backed verification establishes the required deletion outcome. |
+| INCOMPLETE | Evidence supports unresolved findings and a remediation plan. |
+| NOT_APPLICABLE | The request does not authorize deletion or deletion verification. |
+| POLICY UNRESOLVED | Available evidence is insufficient to establish a policy decision. |
+
+**Important:** Missing evidence is not proof of deletion. The system preserves uncertainty rather than incorrectly reporting compliance.
+
+---
+
+## Technology
+
+The integrated application includes:
+
+- Python-based backend and investigation pipeline
+- Frontend dashboard and interactive visualizations
+- Evidence-processing and identity-resolution modules
+- Policy evaluation and explainability components
+- Ghost Data Map
+- Temporal Rebirth Detection
+- What-If simulation
+- Automated tests and evaluation utilities
+
+See the source code and project documentation for implementation details.
+
+---
+
+## Running the Application Locally
+
+### Requirements
+
+- Python 3
+- Git
+- Project dependencies installed
+
+### Clone the repository
 
 ```bash
 git clone https://github.com/Binitha3/cooked.exe.git
 cd cooked.exe
 ```
 
-Start your AI coding tool from the **repository root** so it automatically reads [`AGENTS.md`](./AGENTS.md) and logs your session turns to `log.txt` in the root directory.
-
-Build your solution in `code/main.py`, or use another language and document its setup and run command clearly in your README.
-
-Your solution must:
-
-- Read the input files from `dataset/`
-- Generate one prediction row for every request in `dataset/deletion_requests.csv`
-- Write the final predictions to `output.csv` in the repository root
-
-Run the Python entry point with:
-
-```bash
-python3 code/main.py
-```
-
-The blank template at `dataset/output.csv` is provided as a reference. Your final generated file for submission must be the root-level `output.csv`.
-
-For a single-case local investigation UI, start the application from the repository root:
+### Start the application
 
 ```bash
 python3 -m code.web_app --port 8000
 ```
 
-Then open `http://127.0.0.1:8000/`. The interface runs identity, evidence, and policy checks for the selected case in memory. Ghost Data Map, risk explanations, the evidence timeline, and Rebirth results use the selected case's pipeline data. What-If actions are read-only previews; the app does not execute remediation or write `output.csv`.
+Open:
 
-Run the test suite from the repository root with:
+http://127.0.0.1:8000/
+
+The application provides the local investigation interface and backend API.
+
+---
+
+## Demo Scenarios
+
+The integrated prototype includes evidence-backed investigation scenarios.
+
+### Case 15
+Demonstrates an evidence-backed active data-flow finding and associated trace relationships.
+
+### Case 16
+Demonstrates:
+- Ghost Data Map with 7 nodes and 5 evidenced edges.
+- Two risk cards.
+- Evidence provenance.
+- What-If remediation preview.
+- INDETERMINATE Rebirth status when required snapshot coverage is unavailable.
+
+The hosted demo configuration is restricted to the 32 public sample cases.
+
+---
+
+## Testing and Verification
+
+The latest reported test results include:
+
+Run the current suite from the repository root:
 
 ```bash
 ./scripts/run_tests.sh
 ```
 
-The test modules live in `tests/`; production modules remain in `code/`.
-
-## Repository layout
-
-- `code/` — application, policy, evidence, and frontend implementation.
-- `dataset/` — challenge-provided participant data.
-- `docs/` — architecture and feature integration notes.
-- `evaluation/` — evaluation reports and machine-readable blocker diagnostics.
-- `results/` — clearly labelled generated diagnostics; never the official output.
-- `scripts/` — test, evaluation, demo, and packaging commands.
-- `tests/` — unit and integration tests.
-
-## Hosted demo (Render)
-
-The root [`render.yaml`](./render.yaml) defines a Render web service for the
-`main` branch. To create the public demo, sign in to Render,
-connect the `Binitha3/cooked.exe` GitHub repository, and create a Blueprint from
-this repository. The service binds to Render's assigned port, exposes
-`/api/health` for health checks, and sets `DEADBYTE_DEMO_MODE=true` so its case
-catalog contains only the 32 public sample requests. No API keys or other
-secrets are required. The local command above keeps its existing full catalog.
-
-The Blueprint selects Render's Free plan. Free services sleep after 15 minutes
-without inbound traffic, so the first judge request after idle may take about a
-minute to start. The service uses the repository's bundled dataset read-only;
-it does not write submission output.
-
-
-## Dataset
-
-All participant-facing files are in `dataset/`:
-
-| File | Contents |
-| --- | --- |
-| `deletion_requests.csv` | 518 requests |
-| `sample_deletion_requests.csv` | 32 sample requests |
-| `sample_output.csv` | Correct sample answers |
-| `user_identities.csv` | Current user identities |
-| `user_audit_log.csv` | Historical identity changes |
-| `system_activity.csv` | Activity across services and data processes |
-| `deletion_rules.csv` | Required treatment for each data category |
-| `evidence_files.csv` | Manifest of supplied evidence files |
-| `output.csv` | Blank output template |
-
-Evidence is stored under `dataset/evidence/` and may include PDFs, images, logs, JSON, plain text, or SQL snapshot exports. SQL captures may contain a primary database, regional replicas, a reporting replica, or a failover replica so replication drift can be investigated directly. The `.sql` files are readable as text and executable with SQLite.
-
-Only `deletion_requests.csv` requires answers. The other files provide evidence and context.
+Latest result after repository reorganization: 167 tests ran, 163 passed, 3 skipped, and 1 errored. The single known error is the sample replay stopping at case 01 because cutoff-valid evidence does not establish a subject-to-resource link. The skips are optional PDF parser tests because `pypdf` is not installed. See [`evaluation/evaluation_report.md`](./evaluation/evaluation_report.md) for the complete result and limitations.
 
 ---
 
-## Output
+## Evaluation Status and Limitations
 
-Create `output.csv` with these columns in this exact order:
+The challenge evaluation contains 518 requests.
+
+Current validated results:
+
+- 381 rows validated.
+- 137 requests remain unresolved.
+- The official 518-row `output.csv` has not been generated.
+
+The unresolved cases require additional cutoff-valid evidence or extraction of potentially relevant image artifacts.
+
+The partial diagnostic CSV is not an official submission and must not be treated as a completed evaluation result.
+
+DEADBYTE intentionally avoids fabricating evidence or forcing unsupported deletion decisions.
+
+---
+
+## Deployment
+
+A Render deployment configuration is provided through `render.yaml`.
+
+The hosted configuration is designed for the Render Free plan and restricts the demo to public sample cases.
+
+**Hosted demo:** [https://deadbyte-demo.onrender.com](https://deadbyte-demo.onrender.com)
+
+The Render service uses the repository's `main` branch, serves only the public sample cases, and exposes `/api/health` for health checks. Render's free service may sleep after inactivity; the first request can take longer while it starts.
+
+---
+
+## Repository Structure
 
 ```text
-case_id,deletion_status,steps_json
+cooked.exe/
+├── code/                       # Application source and backend
+├── dataset/                    # Participant-facing challenge data
+├── docs/                       # Architecture and feature documentation
+├── evaluation/                 # Reports and replay diagnostics
+├── results/                    # Clearly labelled diagnostic artifacts
+├── scripts/                    # Demo, test, evaluation and packaging tools
+├── tests/                      # Unit and integration suite
+├── .gitignore
+├── AGENTS.md
+├── CLAUDE.md
+├── README.md
+├── agent-trace.zip
+├── agent_trace_instructions.md
+├── code.zip
+├── log.txt
+├── problem_statement.md
+└── render.yaml
 ```
 
-Produce exactly one row per request. `deletion_status` is `COMPLETE`, `INCOMPLETE`, or `NOT_APPLICABLE`. `steps_json` is an ordered JSON array containing findings, remediation actions, and verification checks. Use an empty array (`[]`) for `NOT_APPLICABLE`. Evidence references may be a `file_id`, `activity_id`, or `audit_id`. Determine the resource state at `audit_at` from the available evidence; reported workflow statuses and operation results are claims. Use `dataset/sample_output.csv` as the format reference.
-
-The final file must contain 518 data rows sorted by `case_id` (plus the header row). The grader parses `steps_json` as JSON, so object-key order and whitespace do not matter; array order does. Order findings, remediation, and verification in that phase order. Within a phase, follow the operation order in the problem statement, then sort by `system_id` and `resource_id`.
-
-**Current status:** no valid root `output.csv` is available. There are 381 validated candidate rows and 137 unresolved requests. The file in `results/partial_validated_rows_not_for_submission.csv` is diagnostic only and must not be submitted as `output.csv`.
+No official root `output.csv` is present because 137 requests remain unresolved. The 381-row diagnostic CSV is kept under `results/` and must not be submitted as the official output.
 
 ---
 
-## Evaluation
+## Team
 
-`output.csv` will be compared with hidden canonical answers. Scoring considers:
+**Team Deadbyte**
 
-- deletion assessment accuracy;
-- current and historical identity resolution;
-- discovery of remaining data and recreation risks;
-- correct policy application and evidence references; and
-- completeness and ordering of remediation and verification steps.
+Built for the Hackoween Hackathon.
 
-Your `code.zip` must include:
-
-```text
-evaluation/evaluation_report.md
-evaluation/usage_report.md
-```
-
-- `evaluation_report.md` must cover case, row, field, and sequence accuracy, at least three additional evaluation cases created by you, failures found, and improvements made.
-- `usage_report.md` must cover the final full-dataset run, including model providers and names, model calls, input and output tokens, total and average tokens per request, and estimated total and per-request cost. Include per-model and overall totals when using multiple models.
-
-Place `evaluation_report.md` and `usage_report.md` in the root `evaluation/` directory. Write the evaluation metrics, custom test cases, and usage details in those Markdown files. Automated code evaluation ignores raw data files (`.csv`, `.tsv`, `.json`, `.jsonl`, `.sql`, `.log`), so report findings in Markdown as well as maintaining machine-readable diagnostics.
+Our goal is to make data deletion verifiable, explainable, and evidence-driven.
 
 ---
 
-## Chat Transcript
+### DEADBYTE
 
-This repository includes [`AGENTS.md`](./AGENTS.md), which instructs compatible AI coding tools to append conversation summaries to `log.txt` in the repository root:
-
-| Platform | Path |
-| --- | --- |
-| macOS / Linux | `<repo root>/log.txt` |
-| Windows | `<repo root>\log.txt` |
-
-- Always launch your AI coding agent from the repository root (or explicitly ask it to read `./AGENTS.md` first) so every turn is logged to `log.txt` with the required `User Prompt`, `Agent Response Summary`, `Actions`, and `Context` sections.
-- Upload `log.txt` directly as your `chat_transcript` submission on HackerRank.
-- Do not include API keys, tokens, credentials, or secrets in prompts, code, configuration, or `log.txt`.
-
----
-
-## Packaging `code.zip` and Submission
-
-| Item | Description |
-| --- | --- |
-| `code.zip` | Runnable solution, prompts, configuration, `README.md`, and `evaluation/` reports |
-| `output.csv` | One answer row for each of the 518 requests in `dataset/deletion_requests.csv` |
-| `chat_transcript` | The root `log.txt` file generated by your coding agent |
-| AI interview | Live explanation of your architecture, approach, and evaluation |
-
-You may use any programming language, model, framework, or retrieval approach. Include clear setup and execution instructions in `README.md` inside `code.zip`.
-
-Build `code.zip` from the repository root without bundling the dataset:
-
-```bash
-python3 scripts/package_submission.py
-```
-
-When packaging `code.zip`:
-
-- The packaging script includes `code/`, `docs/`, `evaluation/`, `scripts/`, and `tests/` with the root README and Render configuration.
-- Do **not** include `dataset/`, `results/`, virtual environments (`.venv`, `venv`, `node_modules`), credentials, or build caches (`__pycache__`).
-- Do **not** include nested archives (`.zip`, `.tar`, `.gz`, `.tgz`, `.7z`, `.rar`) inside `code.zip` — submissions containing nested archive files will be rejected.
-
-Before submitting, confirm that:
-
-- `output.csv` has the exact header `case_id,deletion_status,steps_json` and contains all 518 data rows sorted by `case_id`;
-- every `steps_json` value is a valid JSON array with consecutive step numbers starting at `1`;
-- findings cite valid evidence IDs, and `COMPLETE` verification steps cite evidence proving the current state;
-- proposed remediation and future verification steps use an empty `evidence_id` (`""`);
-- `code.zip` includes your runnable code, `README.md`, `evaluation/evaluation_report.md`, and `evaluation/usage_report.md`;
-- `log.txt` follows the `AGENTS.md` turn format and is uploaded to the `chat_transcript` slot; and
-- no API keys, credentials, real personal data, or sensitive configuration values are included.
+**Deleted doesn't mean gone. Prove it.**
